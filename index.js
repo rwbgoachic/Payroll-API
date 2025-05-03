@@ -1,3 +1,9 @@
-// run `node index.js` in the terminal
+const { SecurityManager } = require('@paysurity/security');
+const { TaxCalculator } = require('@paysurity/tax');
 
-console.log(`Hello Node.js v${process.versions.node}!`);
+const securityManager = new SecurityManager();
+const taxCalculator = new TaxCalculator();
+
+console.log('Payroll System Initialized');
+console.log(`Security Module Version: ${SecurityManager.VERSION}`);
+console.log(`Tax Calculator Version: ${TaxCalculator.VERSION}`);
