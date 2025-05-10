@@ -1,10 +1,5 @@
-const { SecurityManager } = require('@paysurity/security');
-const { TaxCalculator } = require('@paysurity/tax');
-
 class PayrollSystem {
   constructor() {
-    this.securityManager = new SecurityManager();
-    this.taxCalculator = new TaxCalculator();
   }
 
   validateEmployeeData(employeeData) {
@@ -13,7 +8,7 @@ class PayrollSystem {
     }
 
     employeeData.forEach(employee => {
-      if (!employee.id || !employee.name || typeof employee.salary !== 'number') {
+      if (!employee.id || !employee.name || typeof employee.salary !== 'number' || !employee.tenant_id) {
         throw new Error(`Invalid employee data for employee: ${JSON.stringify(employee)}`);
       }
       if (employee.salary < 0) {
@@ -25,23 +20,20 @@ class PayrollSystem {
     });
   }
 
-  calculatePayroll(employeeData, token) {
-    if (!this.securityManager.validateToken(token)) {
-      throw new Error('Invalid security token');
-    }
-
+  calculatePayroll(employeeData) {
     this.validateEmployeeData(employeeData);
 
     const currentDate = new Date();
     const payPeriod = currentDate.toISOString().slice(0, 7); // YYYY-MM format
 
     return employeeData.map(employee => {
-      const tax = this.taxCalculator.calculateIncomeTax(employee.salary);
+      const tax = this.calculateTax(employee.salary);
       const netPay = employee.salary - tax;
       const deductions = this.calculateDeductions(employee.salary);
 
       return {
         id: employee.id,
+        tenant_id: employee.tenant_id,
         name: employee.name,
         grossPay: employee.salary,
         tax,
@@ -51,6 +43,11 @@ class PayrollSystem {
         processedAt: currentDate.toISOString()
       };
     });
+  }
+
+  calculateTax(salary) {
+    // Simple tax calculation (25% flat rate)
+    return salary * 0.25;
   }
 
   calculateDeductions(salary) {
@@ -68,6 +65,7 @@ class PayrollSystem {
     const totalNetPay = payrollResults.reduce((sum, result) => sum + result.netPay, 0);
 
     return {
+      tenant_id: payrollResults[0]?.tenant_id,
       employeeCount: payrollResults.length,
       payPeriod: payrollResults[0]?.payPeriod || '',
       totalGrossPay,

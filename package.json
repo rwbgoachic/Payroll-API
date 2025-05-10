@@ -6,8 +6,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@paysurity/security": "1.2.1",
-    "@paysurity/tax": "1.0.0"
   },
   "devDependencies": {
     "jest": "^29.7.0"
