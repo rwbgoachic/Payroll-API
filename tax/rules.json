@@ -1,0 +1,41 @@
+{
+  "IRS": {
+    "taxRates": [
+      {
+        "bracket": "0-11000",
+        "rate": 0.10
+      },
+      {
+        "bracket": "11001-44725",
+        "rate": 0.12
+      },
+      {
+        "bracket": "44726-95375",
+        "rate": 0.22
+      }
+    ],
+    "deductions": {
+      "standardDeduction": 13850,
+      "allowed": [
+        "401k",
+        "health_insurance",
+        "fsa"
+      ],
+      "maxRate": 0.5
+    },
+    "lastUpdated": "2024-01-01T00:00:00Z"
+  },
+  "CA": {
+    "minimumWage": 15.50,
+    "payrollFrequency": "bi-weekly",
+    "deductions": {
+      "allowed": [
+        "state_disability",
+        "state_income_tax",
+        "health_benefits"
+      ],
+      "maxRate": 0.45
+    },
+    "lastUpdated": "2024-01-01T00:00:00Z"
+  }
+}

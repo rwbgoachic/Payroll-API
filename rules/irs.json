@@ -1,0 +1,8 @@
+{
+  "taxRate": 0.25,
+  "minSalary": 15080,
+  "maxDeductionRate": 0.5,
+  "standardDeduction": 13850,
+  "socialSecurityRate": 0.062,
+  "medicareRate": 0.0145
+}

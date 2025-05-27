@@ -1,0 +1,16 @@
+{
+  "states": [
+    {
+      "code": "CA",
+      "name": "California",
+      "lastUpdated": "2024-01-01T00:00:00Z",
+      "features": ["tax_calc", "deductions", "minimum_wage"]
+    },
+    {
+      "code": "NY",
+      "name": "New York",
+      "lastUpdated": "2024-01-01T00:00:00Z",
+      "features": ["tax_calc", "deductions"]
+    }
+  ]
+}

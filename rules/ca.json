@@ -1,0 +1,7 @@
+{
+  "taxRate": 0.093,
+  "minSalary": 15.50,
+  "maxDeductionRate": 0.45,
+  "sdiRate": 0.009,
+  "minimumWage": 15.50
+}

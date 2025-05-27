@@ -1,0 +1,16 @@
+{
+  "states": [
+    {
+      "code": "CA",
+      "name": "California",
+      "forms": ["DE-9", "DE-9C"],
+      "lastUpdated": "2024-01-01T00:00:00Z"
+    },
+    {
+      "code": "NY",
+      "name": "New York",
+      "forms": ["NYS-45"],
+      "lastUpdated": "2024-01-01T00:00:00Z"
+    }
+  ]
+}

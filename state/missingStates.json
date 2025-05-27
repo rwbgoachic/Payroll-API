@@ -1,0 +1,16 @@
+{
+  "states": [
+    {
+      "code": "AL",
+      "name": "Alabama",
+      "missingFeatures": ["tax_calc", "deductions"],
+      "expectedDate": "2024-06-01T00:00:00Z"
+    },
+    {
+      "code": "AK",
+      "name": "Alaska",
+      "missingFeatures": ["tax_calc"],
+      "expectedDate": "2024-06-01T00:00:00Z"
+    }
+  ]
+}

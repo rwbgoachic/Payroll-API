@@ -1,2 +1,2 @@
-# Payroll-API
-Repository created by Bolt to GitHub extension
+# payroll-api  
+Payroll API now uses shared @paysurity/payroll-core.

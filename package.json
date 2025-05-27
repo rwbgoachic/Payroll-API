@@ -3,9 +3,20 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "start": "node index.js"
+    "start": "node server.js",
+    "build": "node index.js"
   },
   "dependencies": {
+    "@paysurity/common-utils": "^1.0.0",
+    "@paysurity/api-middleware": "^1.0.0",
+    "@paysurity/payroll-core": "^1.0.0",
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "node-cron": "^3.0.3",
+    "fs-extra": "^11.2.0",
+    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.6.2",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
     "jest": "^29.7.0"
